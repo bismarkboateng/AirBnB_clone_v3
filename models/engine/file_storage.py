@@ -78,6 +78,7 @@ class FileStorage:
         Deserialize JSON file to objects
         '''
         self.reload()
+<<<<<<< HEAD
 
     def get(self, cls, id):
         '''
@@ -107,3 +108,5 @@ class FileStorage:
         '''
         obj_dict = self.all(cls)
         return len(obj_dict)
+=======
+>>>>>>> refs/remotes/origin/master

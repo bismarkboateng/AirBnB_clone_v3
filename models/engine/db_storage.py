@@ -84,6 +84,7 @@ class DBStorage:
         self.__session = Session()
 
     def close(self):
+<<<<<<< HEAD
         '''
             Remove private session attribute
         '''
@@ -117,3 +118,7 @@ class DBStorage:
         '''
         obj_dict = models.storage.all(cls)
         return len(obj_dict)
+=======
+        """call remove() method on the private session attribute"""
+        self.__session.remove()
+>>>>>>> refs/remotes/origin/master

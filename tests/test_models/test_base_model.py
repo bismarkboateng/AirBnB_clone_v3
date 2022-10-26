@@ -68,8 +68,33 @@ class TestBase(unittest.TestCase):
         sys.stdout = capture_out
         print(self.my_model)
 
+<<<<<<< HEAD
         cap = capture_out.getvalue().split(" ")
         self.assertEqual(cap[0], "[BaseModel]")
+=======
+class TestBaseModel(unittest.TestCase):
+    """Test the BaseModel class"""
+
+    def test_instantiation(self):
+        """Test that object is correctly created"""
+        inst = BaseModel()
+        self.assertIs(type(inst), BaseModel)
+        inst.name = "Holberton"
+        inst.number = 89
+        attrs_types = {
+            "id": str,
+            "created_at": datetime,
+            "updated_at": datetime,
+            "name": str,
+            "number": int
+        }
+        for attr, typ in attrs_types.items():
+            with self.subTest(attr=attr, typ=typ):
+                self.assertIn(attr, inst.__dict__)
+                self.assertIs(type(inst.__dict__[attr]), typ)
+        self.assertEqual(inst.name, "Holberton")
+        self.assertEqual(inst.number, 89)
+>>>>>>> refs/remotes/origin/master
 
         self.assertEqual(cap[1], "({})".format(inst_id))
         sys.stdout = backup

@@ -12,9 +12,21 @@ storage = getenv("HBNB_TYPE_STORAGE", "fs")
 
 
 class TestState(unittest.TestCase):
+<<<<<<< HEAD
     '''
         Test the State class.
     '''
+=======
+    """Test the State class"""
+
+    def test_is_subclass(self):
+        """Test that State is a subclass of BaseModel"""
+        state = State()
+        self.assertIsInstance(state, BaseModel)
+        self.assertTrue(hasattr(state, "id"))
+        self.assertTrue(hasattr(state, "created_at"))
+        self.assertTrue(hasattr(state, "updated_at"))
+>>>>>>> refs/remotes/origin/master
 
     @classmethod
     def setUpClass(cls):
@@ -24,6 +36,7 @@ class TestState(unittest.TestCase):
         cls.new_state = State()
         cls.new_state.name = "California"
 
+<<<<<<< HEAD
     @classmethod
     def tearDownClass(cls):
         '''
@@ -34,6 +47,18 @@ class TestState(unittest.TestCase):
             remove("file.json")
         except FileNotFoundError:
             pass
+=======
+    def test_to_dict_creates_dict(self):
+        """test to_dict method creates a dictionary with proper attrs"""
+        s = State()
+        new_d = s.to_dict()
+        self.assertEqual(type(new_d), dict)
+        self.assertFalse("_sa_instance_state" in new_d)
+        for attr in s.__dict__:
+            if attr is not "_sa_instance_state":
+                self.assertTrue(attr in new_d)
+        self.assertTrue("__class__" in new_d)
+>>>>>>> refs/remotes/origin/master
 
     def test_States_dbtable(self):
         '''
