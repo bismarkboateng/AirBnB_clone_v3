@@ -428,7 +428,6 @@ user@ubuntu:~/AirBnB_v3$ curl -X GET http://0.0.0.0:5000/api/v1/cities/1da255c0-
 At this time, there are no known bugs.
 
 ## Authors
-<<<<<<< HEAD
 Phase 3:
 * Becky Chen | [GitHub](https://github.com/bchen528) | [Twitter](https://twitter.com/bchen803)
 * Alex Allen | [GitHub](https://github.com/aDENTinTIME) | [Twitter](https://twitter.com/adentintime)
@@ -443,12 +442,6 @@ Phase 1 codebase:
 * Binita Rai | [Github](https://github.com/rayraib)
 * Steven Garcia | [Github](https://github.com/stvngrcia)
 
-=======
-Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
-Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
-
-Second part of Airbnb: Joann Vuong
->>>>>>> refs/remotes/origin/master
 ## License
 
 **hbnb** is open source and free to download and use

@@ -18,7 +18,6 @@ storage = getenv("HBNB_TYPE_STORAGE", "fs")
 
 
 class TestUser(unittest.TestCase):
-<<<<<<< HEAD
     '''
         Testing User class
     '''
@@ -32,17 +31,6 @@ class TestUser(unittest.TestCase):
         cls.new_user.password = "password"
         cls.new_user.firt_name = "Mel"
         cls.new_user.last_name = "Ng"
-=======
-    """Test the User class"""
-
-    def test_is_subclass(self):
-        """Test that User is a subclass of BaseModel"""
-        user = User()
-        self.assertIsInstance(user, BaseModel)
-        self.assertTrue(hasattr(user, "id"))
-        self.assertTrue(hasattr(user, "created_at"))
-        self.assertTrue(hasattr(user, "updated_at"))
->>>>>>> refs/remotes/origin/master
 
     @classmethod
     def tearDownClass(cls):
@@ -76,7 +64,6 @@ class TestUser(unittest.TestCase):
         self.assertTrue("last_name" in self.new_user.__dir__())
         self.assertTrue("password" in self.new_user.__dir__())
 
-<<<<<<< HEAD
     @unittest.skipIf(storage == "db", "Testing database storage only")
     def test_type_email(self):
         '''
@@ -84,18 +71,6 @@ class TestUser(unittest.TestCase):
         '''
         name = getattr(self.new_user, "email")
         self.assertIsInstance(name, str)
-=======
-    def test_to_dict_creates_dict(self):
-        """test to_dict method creates a dictionary with proper attrs"""
-        u = User()
-        new_d = u.to_dict()
-        self.assertEqual(type(new_d), dict)
-        self.assertFalse("_sa_instance_state" in new_d)
-        for attr in u.__dict__:
-            if attr is not "_sa_instance_state":
-                self.assertTrue(attr in new_d)
-        self.assertTrue("__class__" in new_d)
->>>>>>> refs/remotes/origin/master
 
     @unittest.skipIf(storage == "db", "Testing database storage only")
     def test_type_first_name(self):

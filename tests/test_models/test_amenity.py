@@ -15,7 +15,6 @@ storage = getenv("HBNB_TYPE_STORAGE", "fs")
 
 
 class TestAmenity(unittest.TestCase):
-<<<<<<< HEAD
     '''
         Testing Amenity class
     '''
@@ -26,17 +25,6 @@ class TestAmenity(unittest.TestCase):
         '''
         cls.new_amenity = Amenity()
         cls.new_amenity.name = "wifi"
-=======
-    """Test the Amenity class"""
-
-    def test_is_subclass(self):
-        """Test that Amenity is a subclass of BaseModel"""
-        amenity = Amenity()
-        self.assertIsInstance(amenity, BaseModel)
-        self.assertTrue(hasattr(amenity, "id"))
-        self.assertTrue(hasattr(amenity, "created_at"))
-        self.assertTrue(hasattr(amenity, "updated_at"))
->>>>>>> refs/remotes/origin/master
 
     @classmethod
     def tearDownClass(cls):
@@ -49,7 +37,6 @@ class TestAmenity(unittest.TestCase):
         except FileNotFoundError:
             pass
 
-<<<<<<< HEAD
     def test_pep8_style_check(self):
         '''
             Tests pep8 style
@@ -57,19 +44,6 @@ class TestAmenity(unittest.TestCase):
         style = pep8.StyleGuide(quiet=True)
         p = style.check_files(['models/amenity.py'])
         self.assertEqual(p.total_errors, 0, "pep8 error needs fixing")
-=======
-    def test_to_dict_creates_dict(self):
-        """test to_dict method creates a dictionary with proper attrs"""
-        am = Amenity()
-        print(am.__dict__)
-        new_d = am.to_dict()
-        self.assertEqual(type(new_d), dict)
-        self.assertFalse("_sa_instance_state" in new_d)
-        for attr in am.__dict__:
-            if attr is not "_sa_instance_state":
-                self.assertTrue(attr in new_d)
-        self.assertTrue("__class__" in new_d)
->>>>>>> refs/remotes/origin/master
 
     def test_States_dbtable(self):
         '''

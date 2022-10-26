@@ -76,23 +76,10 @@ class TestUser(unittest.TestCase):
     def test_place_amenity_attrb(self):
         self.assertTrue("amenity_ids" in self.new_place.__dir__())
 
-<<<<<<< HEAD
     @unittest.skipIf(storage != "db", "Testing database storage only")
     def test_place_amenity_dbattrb(self):
         self.assertTrue("amenities" in self.new_place.__dir__())
         self.assertTrue("reviews" in self.new_place.__dir__())
-=======
-class TestPlace(unittest.TestCase):
-    """Test the Place class"""
-
-    def test_is_subclass(self):
-        """Test that Place is a subclass of BaseModel"""
-        place = Place()
-        self.assertIsInstance(place, BaseModel)
-        self.assertTrue(hasattr(place, "id"))
-        self.assertTrue(hasattr(place, "created_at"))
-        self.assertTrue(hasattr(place, "updated_at"))
->>>>>>> refs/remotes/origin/master
 
     @unittest.skipIf(storage == "db", "Testing database storage only")
     def test_type_longitude(self):
@@ -174,7 +161,6 @@ class TestPlace(unittest.TestCase):
         user_id = getattr(self.new_place, "user_id")
         self.assertIsInstance(user_id, str)
 
-<<<<<<< HEAD
     @unittest.skipIf(storage == "db", "Testing database storage only")
     def test_type_city_id(self):
         '''
@@ -182,40 +168,3 @@ class TestPlace(unittest.TestCase):
         '''
         city_id = getattr(self.new_place, "city_id")
         self.assertIsInstance(city_id, str)
-=======
-    @unittest.skipIf(models.storage_t == 'db', "not testing File Storage")
-    def test_amenity_ids_attr(self):
-        """Test Place has attr amenity_ids, and it's an empty list"""
-        place = Place()
-        self.assertTrue(hasattr(place, "amenity_ids"))
-        self.assertEqual(type(place.amenity_ids), list)
-        self.assertEqual(len(place.amenity_ids), 0)
-
-    def test_to_dict_creates_dict(self):
-        """test to_dict method creates a dictionary with proper attrs"""
-        p = Place()
-        new_d = p.to_dict()
-        self.assertEqual(type(new_d), dict)
-        self.assertFalse("_sa_instance_state" in new_d)
-        for attr in p.__dict__:
-            if attr is not "_sa_instance_state":
-                self.assertTrue(attr in new_d)
-        self.assertTrue("__class__" in new_d)
-
-    def test_to_dict_values(self):
-        """test that values in dict returned from to_dict are correct"""
-        t_format = "%Y-%m-%dT%H:%M:%S.%f"
-        p = Place()
-        new_d = p.to_dict()
-        self.assertEqual(new_d["__class__"], "Place")
-        self.assertEqual(type(new_d["created_at"]), str)
-        self.assertEqual(type(new_d["updated_at"]), str)
-        self.assertEqual(new_d["created_at"], p.created_at.strftime(t_format))
-        self.assertEqual(new_d["updated_at"], p.updated_at.strftime(t_format))
-
-    def test_str(self):
-        """test that the str method has the correct output"""
-        place = Place()
-        string = "[Place] ({}) {}".format(place.id, place.__dict__)
-        self.assertEqual(string, str(place))
->>>>>>> refs/remotes/origin/master

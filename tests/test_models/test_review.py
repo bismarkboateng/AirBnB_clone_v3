@@ -14,21 +14,9 @@ storage = getenv("HBNB_TYPE_STORAGE", "fs")
 
 
 class TestReview(unittest.TestCase):
-<<<<<<< HEAD
     '''
         Testing Review class
     '''
-=======
-    """Test the Review class"""
-
-    def test_is_subclass(self):
-        """Test if Review is a subclass of BaseModel"""
-        review = Review()
-        self.assertIsInstance(review, BaseModel)
-        self.assertTrue(hasattr(review, "id"))
-        self.assertTrue(hasattr(review, "created_at"))
-        self.assertTrue(hasattr(review, "updated_at"))
->>>>>>> refs/remotes/origin/master
 
     @classmethod
     def setUpClass(cls):
@@ -59,24 +47,11 @@ class TestReview(unittest.TestCase):
         p = style.check_files(['models/review.py'])
         self.assertEqual(p.total_errors, 0, "pep8 error needs fixing")
 
-<<<<<<< HEAD
     def test_Review_dbtable(self):
         '''
             Check if the tablename is correct
         '''
         self.assertEqual(self.rev.__tablename__, "reviews")
-=======
-    def test_to_dict_creates_dict(self):
-        """test to_dict method creates a dictionary with proper attrs"""
-        r = Review()
-        new_d = r.to_dict()
-        self.assertEqual(type(new_d), dict)
-        self.assertFalse("_sa_instance_state" in new_d)
-        for attr in r.__dict__:
-            if attr is not "_sa_instance_state":
-                self.assertTrue(attr in new_d)
-        self.assertTrue("__class__" in new_d)
->>>>>>> refs/remotes/origin/master
 
     def test_Review_inheritance(self):
         '''
